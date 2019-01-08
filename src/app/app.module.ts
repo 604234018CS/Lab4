@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BookListPage } from './../pages/book-list/book-list';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -16,6 +17,7 @@ import { BookRestProvider } from '../providers/book-rest/book-rest';
     BookListPage
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
