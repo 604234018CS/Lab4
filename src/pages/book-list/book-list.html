@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>bookList</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngIf="book">
+    <ion-item *ngFor="let book of book">
+      <h2>{{book.title}}</h2>
+  </ion-item>
+</ion-list>
+
+</ion-content>
