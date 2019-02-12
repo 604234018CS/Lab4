@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Book Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid style="height: 100%" >
+        <ion-row justify-content-center align-items-center style="height: 100%" *ngIf="book">
+  
+              <img  height="200px" src="{{ book.thumbnailUrl }}" />
+              
+             <form (ngSubmit)="saveBook()">
+              <ion-list >
+                  <ion-item>                
+                      <strong>Title:</strong>     {{ book.title }}    
+                      <ion-input type="text" [(ngModel)]="book.title" name="title"></ion-input>   
+                  </ion-item>
+
+                  <ion-item>                                      
+                    <ion-label>Author:</ion-label>      
+                    <ion-input type="text" [(ngModel)]="book.author" name="author"></ion-input>   
+                  </ion-item>
+                  
+                  <ion-item>                                       
+                    <ion-label>Pages:</ion-label>      
+                    <ion-input type="number"  [(ngModel)]="book.pageCount" name="pageCount"></ion-input>           
+                  </ion-item>
+                  
+                  <ion-item>                
+                    <ion-label stacked>Published Date:</ion-label>
+                    <ion-datetime name="publishedDate" pickerFormat="D MMM YYYY" displayFormat="D MMM YYYY" [(ngModel)]="book.publishedDate"></ion-datetime>
+                  </ion-item>        
+                  
+                  <ion-item>  
+                        <strong>ISBN:</strong>   {{ book.isbn }}
+                        <ion-input type="text" [(ngModel)]="book.isbn" name="isbn"></ion-input>    
+                  </ion-item>
+
+                  <ion-item text-wrap>                
+                     <ion-label stacked>Description</ion-label>
+                     <ion-textarea [(ngModel)]="book.shortDescription" name="shortDescription" rows="5">
+                     </ion-textarea>
+                </ion-item>      
+              </ion-list>
+              
+              <button ion-button full type="submit">
+                Save
+              </button>
+
+              <button ion-button full color="danger" (click)="goBack()">
+                Back
+              </button>
+            </form>
+            
+</ion-row>
+</ion-grid>
+</ion-content>
